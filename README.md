@@ -1,13 +1,13 @@
-# Nerfies
+# FIORD Dataset
 
 This is the repository that contains source code for the [FIORD website](https://parmisian.github.io/fiord360.github.io/).
 
 If you find FIORD useful for your work, please cite:
 ```
 @article{gunes2025fiord
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {SCIA},
+  author    = {Gunes, Ulas and Turkulainen, Matias and Ren, Xuqian and Solin, Arno and Kannala, Juho and Rahtu, Esa},
+  title     = {FIORD: A Fisheye Indoor-Outdoor Dataset with LIDAR Ground Truth for 3D Scene Reconstruction and Benchmarking},
+  journal   = {},
   year      = {2025},
 }
 ```
