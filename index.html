@@ -113,18 +113,6 @@
   </div>
 </section>
 
-<section id="dataset-overview" class="section">
-  <div class="container">
-    <h2 class="title">Dataset Overview</h2>
-    <figure class="image">
-      <img src="./static/images/dataset_overview.jpg" alt="Overview of dataset environments">
-    </figure>
-    <p>
-      Our dataset contains still fisheye images of 5 indoor and 5 outdoors environments, captured by an Insta360 RS-One Inch camera mounted on a tripod. Additionally, the dataset includes two types of point clouds for
-      each scene: the sparse point cloud generated via Structure-from-Motion (SfM) and the dense point cloud captured with a Faro LIDAR scanner.
-    </p>
-  </div>
-</section>
 
 <!--
 <section class="hero teaser">
@@ -156,12 +144,10 @@
            spective images with narrow fields of view (FoV). While effective for
             small-scale scenes, these datasets require large image sets and extensive
             structure-from-motion (SfM) processing, limiting scalability. To address
-            this, we introduce a fisheye image dataset tailored for scene reconstruc
-           tion tasks. Using dual 200-degree fisheye lenses, our dataset provides full
+            this, we introduce a fisheye image dataset tailored for scene reconstruction tasks. Using dual 200-degree fisheye lenses, our dataset provides full
             360-degree coverage of 5 indoor and 5 outdoor scenes. Each scene has
             sparse SfM point clouds and precise LIDAR-derived dense point clouds
-            that can be used as geometric ground-truth, enabling robust benchmark
-           ing under challenging conditions such as occlusions and reflections. While
+            that can be used as geometric ground-truth, enabling robust benchmarking under challenging conditions such as occlusions and reflections. While
             the baseline experiments focus on vanilla Gaussian Splatting and NeRF
             based Nerfacto methods, the dataset supports diverse approaches for
             scene reconstruction, novel view synthesis, and image-based rendering.
@@ -173,6 +159,73 @@
   </div>
 </section>
 
+<section id="dataset-overview" class="section">
+  <div class="container">
+    <h2 class="title">Dataset Overview</h2>
+    <figure class="image">
+      <img src="./static/images/dataset_overview.jpg" alt="Overview of dataset environments">
+    </figure>
+    <p>
+      Our dataset contains still fisheye images of 5 indoor and 5 outdoors environments, captured by an Insta360 RS-One Inch camera mounted on a tripod. Additionally, the dataset includes two types of point clouds for
+      each scene: the sparse point cloud generated via Structure-from-Motion (SfM) and the dense point cloud captured with a Faro LIDAR scanner.
+    </p>
+  </div>
+</section>
+
+<section id="data-capture-process" class="section">
+  <div class="container">
+    <h2 class="title">Data Capturing</h2>
+    
+    <!-- First Row: Data Capture -->
+    <div class="content">
+      <figure class="image">
+        <img src="./static/images/pres2-1(2).png" alt="Data Capture">
+        <img src="./static/images/IMG_20241218_180016_00_967.jpeg" alt="Data Processing">
+      </figure>
+      <p>
+        The Insta360 camera was mounted on a tripod, and placed at a fixed
+        location to take a single shot for the scene image capturing process. Afterwards, it was repositioned
+        with minimal rotation and movement (less than 10 cm between each camera
+        positioning and less than 60 degrees of rotation to either side on the lateral axis of
+        the camera) to another location within the scene, and another image was taken.
+        This process was repeated systematically until the entire scene was covered,
+        with each lens consistently covering the same side of the scene at all times.
+        This consistency, combined with the minimal rotation or movement between
+        each capture ensured sufficient overlap between the images, which played a key
+        role in the subsequent accurate SfM based sparse point cloud generation step.
+      </p>
+      <p>To avoid disruptions from moving objects, such as people in indoor environ-
+        ments or cars in outdoor settings, images were captured at times and locations
+        with minimal activity. The photographer ensured they remained out of the frame
+        by strategically positioning themselves in occluded areas or sequentially capturing the two fisheye images from the same fixed position—first taking a shot while
+        remaining outside the field of view (FoV) of one lens, then repositioning to avoid
+        the FoV of the second lens before capturing the next image.
+      </p>
+      <p>
+       Faro Focus 3D LIDAR scanner, fixed on a tripod is also used to capture high-resolution XYZRGB dense point clouds, which can be used as geometric ground truths for the scenes we captured.
+      This ground truth information can be used for point cloud alignment, 3D scene reconstruction and novel view synthesis model benchmarking and accuracy validation purposes. Scene reconstruction methods that incorporate depth information can also find these dense point clouds useful.
+      </p>
+    </div>
+    
+  </div>
+</section>
+
+<section id="data-processing" class="section">
+  <div class="container">
+    <h2 class="title">Data Processing</h2>
+    <div class="content">
+      <figure class="image">
+        <img src="./static/images/Presentation-6-1-1.png" alt="Data Flow">
+      </figure>
+      <p class="justified-text">
+        For each scene, Insta360 camera is used to obtain still fisheye images and the Faro scanner is used to capture the dense 3D point cloud for geometry reference. Prior to image capture, the two fisheye cameras of the Insta360 camera are calibrated and the estimated calibration parameters are fed to COLMAP, along with the still fisheye images, to create sparse point clouds of our scenes. 
+        The sparse point cloud generated by the Structure-from-Motion pipeline COLMAP is then aligned with the dense 3D point cloud obtained from the LIDAR scanner to enable
+        direct comparison and evaluation for downstream applications of 3D scene reconstruction methods.
+        
+      </p>
+    </div>
+  </div>
+</section>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
@@ -185,6 +238,7 @@
 }</code></pre>
   </div>
 </section>
+
 
 
 <footer class="footer">
