@@ -39,6 +39,20 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<!-- CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- JS (确保先加载了jQuery，因为Bootstrap的JS依赖于jQuery) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
+<script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
+
+  
 </head>
 <body>
 
@@ -113,24 +127,6 @@
   </div>
 </section>
 
-
-<!--
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
-    </div>
-  </div>
-</section>
--->
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
@@ -171,6 +167,33 @@
     </p>
   </div>
 </section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+          <div class="column is-full">
+              <h2 class="title is-3">Interactive Point Cloud Viewer</h2>
+              <div class="row align-items-center">
+                  <div class="col-md-12 padding-0 canvas-row">
+                      <model-viewer
+                          id="viewer"
+                          alt="Point Cloud Model"
+                          src="/static/model/submeeting_view.glb"
+                          style="width: 300%; height: 300px; background-color: #404040"
+                          exposure="0.8"
+                          camera-orbit="0deg 180deg 40%"
+                          auto-rotate
+                          camera-controls>
+                      </model-viewer>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+
 
 <section id="data-capture-process" class="section">
   <div class="container">
