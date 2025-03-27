@@ -147,38 +147,21 @@
 <section id="dataset-overview" class="section">
   <div class="container">
     <h2 class="title">Dataset Overview</h2>
-    <figure class="image">
+    
+    <figure class="image is-3by2">
       <img src="./static/images/dataset_overview.jpg" alt="Overview of dataset environments">
     </figure>
+
     <p>
-      Our dataset contains still fisheye images of 5 indoor and 5 outdoors environments, captured by an Insta360 RS-One Inch camera mounted on a tripod. Additionally, the dataset includes two types of point clouds for
-      each scene: the sparse point cloud generated via Structure-from-Motion (SfM) and the dense point cloud captured with a Faro LIDAR scanner.
+      Our dataset contains still fisheye images of 5 indoor and 5 outdoor environments, captured using an Insta360 RS-One Inch camera. Each scene includes both sparse point clouds (via Structure-from-Motion) and dense LIDAR scans.
     </p>
-  </div>
-</section>
 
-
-<section class="section">
-  <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-          <div class="column is-full">
-              <h2 class="title is-3">Interactive Point Cloud Viewer</h2>
-              <div class="row align-items-center">
-                  <div class="col-md-12 padding-0 canvas-row">
-                      <model-viewer
-                          id="viewer"
-                          alt="Point Cloud Model"
-                          src="static/model/submeeting_view.glb"
-                          style="width: 100%; height: 400px; background-color: #404040"
-                          exposure="0.8"
-                          camera-orbit="0deg 180deg 40%"
-                          auto-rotate
-                          camera-controls>
-                      </model-viewer>
-                  </div>
-              </div>
-          </div>
-      </div>
+    <!-- NEW IMAGE PREVIEW -->
+    <figure class="image is-3by2" style="margin-top: 2rem;">
+      <img src="./static/images/pointcloud_preview.jpg" alt="Point cloud preview">
+      <figcaption class="has-text-centered">Example point cloud visualizations from our dataset</figcaption>
+    </figure>
+    
   </div>
 </section>
 
