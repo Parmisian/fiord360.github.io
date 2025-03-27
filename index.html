@@ -48,14 +48,10 @@
 </head>
 <body>
 
-  <script>
+<script>
   function toggleCode() {
     var codeBlock = document.querySelector('.bibtex-code');
-    if (codeBlock.style.display === "none" || codeBlock.style.display === "") {
-      codeBlock.style.display = "block";
-    } else {
-      codeBlock.style.display = "none";
-    }
+    codeBlock.classList.toggle('hidden');
   }
 </script>
 
@@ -248,7 +244,7 @@
     <h2 class="title">Dataset Overview</h2>
 
     <figure class="image">
-      <img src="./static/images/dataset_overview.jpg" alt="Overview of dataset environments">
+      <img src="./static/images/dataset_overview.jpg">
     </figure>
 
     <p>
@@ -283,8 +279,13 @@
   │               ├── images.bin             
   │               ├── points3D.bin            
   ├── undistorted_model/             <span style="color: darkgreen; font-style: italic;"># COLMAP-based SfM files for the undistorted perspective images</span>
+  ├── (scene_name).e57/               <span style="color: darkgreen; font-style: italic;"># LIDAR generated dense point cloud of the scene, if the dense point cloud is too large, it is given in a .zip file</span>
 </code></pre>
     </div>
+    <div style="margin-top: 1rem; background-color: #f6f6f6; padding: 1rem; border-left: 4px solid #3273dc;">
+  <strong>Important:</strong> The raw .insp format images from the camera are output as upside-down, as can be observed from the raw images file. It is possible to rotate these images using the .sh script given or other software tools, if this is a problem for you.
+The upside-down images do not change the constructed geometry of the scenes, however the rotation and translation parameters will be different. When Nerfacto or GS based results are rendered, simply rotating these results would work just fine. For convenience, the correctly rotated images will be also provided. 
+</div>
   </div>
 </section>
 
