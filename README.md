@@ -7,7 +7,7 @@ If you find FIORD useful for your work, please cite:
 @article{gunes2025fiord
   author    = {Gunes, Ulas and Turkulainen, Matias and Ren, Xuqian and Solin, Arno and Kannala, Juho and Rahtu, Esa},
   title     = {FIORD: A Fisheye Indoor-Outdoor Dataset with LIDAR Ground Truth for 3D Scene Reconstruction and Benchmarking},
-  journal   = {},
+  booktitle   = {SCIA},
   year      = {2025},
 }
 ```
